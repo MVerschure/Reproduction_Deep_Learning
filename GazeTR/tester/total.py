@@ -11,6 +11,8 @@ import cv2, yaml, copy
 from easydict import EasyDict as edict
 import ctools, gtools
 import argparse
+import torchvision
+from torch.utils.tensorboard import SummaryWriter
 
 def main(train, test):
 
@@ -38,6 +40,8 @@ def main(train, test):
   
     if not os.path.exists(logpath):
         os.makedirs(logpath)
+
+    writer = SummaryWriter(log_dir=logpath)
 
     # =============================> Test <=============================
 
@@ -71,10 +75,11 @@ def main(train, test):
                 for key in data:
                     if key != 'name': data[key] = data[key].cuda()
 
-                names =  data["name"]
+                names = data["name"]
                 gts = label.cuda()
            
                 gazes = net(data)
+                loss = net.loss(data, gts)
 
                 for k, gaze in enumerate(gazes):
 
@@ -94,9 +99,14 @@ def main(train, test):
                     outfile.write(" ".join(log) + "\n")
 
             loger = f"[{saveiter}] Total Num: {count}, avg: {accs/count}"
+
+            writer.add_scalar("Loss/test", loss, saveiter)
+            writer.add_scalar("Avg_accs/test", accs/count, saveiter)
             outfile.write(loger)
             print(loger)
         outfile.close()
+    writer.flush()
+    writer.close()
 
 if __name__ == "__main__":
 
