@@ -1,0 +1,23 @@
+---
+test:
+
+    load:
+        begin_step: 10
+        end_step: 80
+        steps: 10
+
+    data: 
+        image: "/tudelft.net/staff-umbrella/StudentsCVlab/mverschure/data/image/test"
+        label: "/tudelft.net/staff-umbrella/StudentsCVlab/mverschure/data/label/test.label"
+        name: eth
+        header: True
+        isFolder: False
+
+    savename: "evaluation"
+
+    device: 0
+
+    reader: reader
+
+# dropout = 0
+# dim_feed = 512
