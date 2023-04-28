@@ -110,6 +110,8 @@ In this paper reproduction project we use the **ETH-XGaze** dataset. This is a d
 ## Reproduction
 To replicate the original papers code<sup>1</sup>, multiple steps were taken: The data was preprocessed, some trouble shooting was done for training and evaluating the model and finally the results were visualised.
 
+We approached this project as a team and each of us contributed to all aspects of the project, including data collection, analysis, and interpretation. We worked collaboratively to ensure that every team member had a thorough understanding of the methods and results. Therefore, we all take responsibility for every part of the project and its outcomes.
+
 ### Working with the HPC cluster (Hyper Performance Computing)
 
 In order to carry out this reproducibility project, we needed to use the HPC Cluster (Hyper Performance Computing) to access both the dataset and to run the codes, given the large size of the dataset. So, we gained access to the HPC cluster with linux-bastion, set up a new pytorch environment, and used Slurm Workload Manager job scripts to operate on the cluster.
@@ -183,6 +185,8 @@ The result of the gaze estimation, performed by the model can be seen on the Fig
 <br>
 
 As you could have noticed from the Fig.11, the end results show that the model estimates gaze with a remarkable accuracy, resulting in the gaze direction prediction that is visually almost indistinguishable from the actual label.
+
+As was mentioned before, the results obtained in our reproduction project are not comparable to the results of the original method paper, as it does not apply the method to the ETH-XGaze dataset.
 
 ## Sources
 1. Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. NeurIPS, 2017. doi: https://doi.org/10.48550/arXiv.1706.03762
