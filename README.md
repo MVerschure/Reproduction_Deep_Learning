@@ -1,3 +1,4 @@
+Disclamers for the code: The code inside *GazeTR/* is cloned from https://github.com/yihuacheng/GazeTR. For a manual on how to use this code check their repository. The code in *data_processing_eth.py* is from the authors of a paper discussed below (https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#eth-xgaze)
 # Gaze estimation using Transformer
 
 **Group 81:** \
